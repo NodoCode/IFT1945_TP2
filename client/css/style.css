@@ -1,0 +1,112 @@
+/* 
+
+CODE COULEUR:
+
+#000000 black
+#14213d bleu foncé
+#fca311 gold
+#e5e5e5 gris
+#ffffff blanc
+
+*/
+
+
+
+
+header {
+    background-color: #000000;
+    border-bottom-style: double ;
+    border-color: #fca311;
+}
+
+body {
+    margin: 0;
+    background-color: #000000;
+    font-family:'Times New Roman', Times, serif;
+}
+
+footer {
+    color: #ffff;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+h2 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 100px;
+    font-weight: 700;
+    background: linear-gradient(15deg, #fca311 10%, #ffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 0%;
+    margin: 1% 2%;
+}
+
+p {
+    color: #ffff;
+    margin: 1% 2%;
+    font-size: 25px;
+}
+
+nav a {
+    font-size: 25px;
+    display: block;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #14213d;
+}
+
+div {
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.div-auto-size {
+    display: flex;
+    justify-content: center;
+    background: #000000;
+    padding: 30px;
+    border-radius: 0px;
+    margin: 0%;
+    border-color: #fca311;
+    border-bottom-style: double;
+}
+
+.gradient-title {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 150px;
+    font-weight: 700;
+    background: linear-gradient(15deg, #fca311 30%, #ffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    border-color: #fca311;
+    border-style: double;
+    margin: 3%;
+}
+
