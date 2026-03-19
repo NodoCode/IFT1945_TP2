@@ -11,24 +11,237 @@ CODE COULEUR:
 */
 
 
-
+* {
+    box-sizing: border-box;
+}
 
 header {
     background-color: #000000;
-    border-bottom-style: double ;
-    border-color: #fca311;
+    border-image: linear-gradient(15deg, #fca311 20%, #ffffff 150%);
+    border-image-slice: 1;
+    border-bottom: 2px double #fca311; 
 }
 
 body {
     margin: 0;
     background-color: #000000;
     font-family:'Times New Roman', Times, serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+    135deg,      /* perpendiculaire à la diagonale */
+    transparent 30%,
+    rgba(252, 162, 17, 0.252) 50%,
+    transparent 70%
+    );
+    animation: shimmer 6s infinite linear;
+    pointer-events: none;
+    z-index: -10;
+}
+
+@keyframes shimmer {
+    0%   { transform: translate(-60%, -60%); }
+    100% { transform: translate(60%, 60%); }
 }
 
 footer {
     color: #ffff;
     display: flex;
     justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+fieldset{
+    margin: 30px 120px;
+    border-image: linear-gradient(40deg, #fca311 20%, #ffffff 150%);
+    border-image-slice: 1;
+
+    border-radius: 15px;
+    padding: 30px 30px 0 30px;
+    
+    /* Forcer le rendu correct */
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #000000;
+}
+
+legend{
+    background: linear-gradient(15deg, #fca311 20%, #ffffff 150%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #000000;
+    font-size: 25px;
+}
+
+select{
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0 30px 0;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+label {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 10% 0px 0px;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 15px 0 30px 0;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 3%;
+    border-radius: 4px;
+    background: #000000;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0 0 0 8%;
+    padding: 40px 0px 0px 0px;
+    position: relative;
+
+    /* Bordure dégradée via box-shadow */
+    box-shadow: 0 0 0 2px #fca311;
+}
+
+
+input[type="checkbox"]:checked {
+    background: linear-gradient(40deg, #fca311 20%, #ffffff 150%);
+    box-shadow: 0 0 30px #fca311;
+    padding: 5px 0 0 0;
+}
+
+
+input[type="checkbox"]:checked::after {
+    padding: 0px 0 0 0;
+    content: '✔';
+    font-size: 3px;
+    display: block;
+    color: #000000;
+    font-size: 13px;
+    text-align: center;
+    line-height: 35px;
+}
+
+
+input[type="checkbox"]:hover {
+    box-shadow: 0 0 0 2px #fca311, 0 0 50px #ffcc79;
+}
+
+input[type="text"]{
+    cursor: text;
+}
+
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fca311;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 5px 4px 15px 0px;
+    background: #000000;
+}
+
+input[type="radio"]:checked {
+    background: linear-gradient(40deg, #fca311 20%, #ffffff 100%);
+    box-shadow: 0 0 8px #fca311;
+}
+
+input[type="radio"] + label {
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+textarea {
+    padding: 10px;
+    background: #000000;
+    border-image: linear-gradient(40deg, #fca311 20%, #ffffff 150%);
+    border-image-slice: 1;
+
+    border-radius: 15px;
+    padding: 20px 20px 20% 10px;
+    
+    appearance: none;
+    -webkit-appearance: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    resize: vertical; 
+    margin: 15px 0 30px 0;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 30px #ffcc79;
+}
+
+button[type="submit"] {
+    padding: 20px 10px;
+    background: linear-gradient(40deg, #fca311 20%, #ffffff 150%);
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    width: 22%;
+    align-self: flex-end;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(40deg, #ffffff 20%, #fca311 150%);
+    box-shadow: 0 0 20px #fca311;
+    transform: translateY(-2px); /* légère élévation */
+}
+
+button[type="submit"]:active {
+    transform: translateY(0px);
+    box-shadow: 0 0 10px #fca311;
+}
+
+nav ul li{
+    margin-bottom: 0;
+}
+
+h3{
+    color: #ffffff;
+    font-size: 30px;
+    margin: 0 0 15px 0;
 }
 
 nav ul {
@@ -40,22 +253,60 @@ nav ul {
     display: flex;
 }
 
+ul {
+    font-size: 20px;
+}
+
+li{
+    margin-bottom: 10px;
+}
+
 h2 {
     font-family:'Times New Roman', Times, serif;
-    font-size: 100px;
+    font-size: 70px;
     font-weight: 700;
-    background: linear-gradient(15deg, #fca311 10%, #ffff 100%);
+    background: linear-gradient(15deg, #fca311 20%, #ffff 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     padding: 0%;
     margin: 1% 2%;
+    text-shadow: 0px 0px 60px #ffcc79;
 }
 
 p {
     color: #ffff;
-    margin: 1% 2%;
+    margin: 1% 3% 1% 1%;
     font-size: 25px;
+}
+
+figure {
+    margin: 0;
+    width: 250px;     
+}
+
+figure img {
+  width: 100%;
+  display: block;
+}
+
+figcaption {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 6px;
+}
+
+blockquote{
+    font-size: 30px;
+}
+
+blockquote p{
+    font-size: 40px;
+}
+
+figure:last-child {
+    margin-right: 0; 
 }
 
 nav a {
@@ -70,12 +321,6 @@ nav a:hover {
     background-color: #14213d;
 }
 
-div {
-    margin: 2%;
-    display: flex;
-    justify-content: center;
-}
-
 .div-auto-size {
     display: flex;
     justify-content: center;
@@ -83,8 +328,9 @@ div {
     padding: 30px;
     border-radius: 0px;
     margin: 0%;
-    border-color: #fca311;
-    border-bottom-style: double;
+    border-image: linear-gradient(15deg, #fca311 20%, #ffffff 150%);
+    border-image-slice: 1;
+    border-bottom: 2px double #fca311;
 }
 
 .gradient-title {
@@ -97,16 +343,100 @@ div {
     background-clip: text;
     margin: 0 0 1rem 0;
     line-height: 1.2;
+    text-shadow: 0px 0px 80px #ffcc79;
 }
 
+.gradient-subtitle {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 100px;
+    font-weight: 700;
+    background: linear-gradient(15deg, #fca311 30%, #ffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+    text-shadow: 0px 0px 80px #ffcc79;
+}
 
+.checkbox-container{
+    flex-direction: row;
+}
 
-.section {
+.description {
+    background: #14213d;
+    padding: 30px;
+    color: white;
+    margin: 10px 130px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; 
+    box-shadow: 3px 3px 0px #e5e5e5;
+    border-radius: 15px;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.checkbox-label{
+    vertical-align: bottom;
+    margin: 0 0 0 8%;
+}
+
+.section-title {
     display: flex;
     flex-direction: column;
-    gap: 1%;
-    border-color: #fca311;
-    border-style: double;
-    margin: 3%;
+    gap: 10px;
+    margin: 5% 5% 2% 5%;
+    padding: 5px;
+    background-color: #000000;
+    
+    border: 20px solid transparent;  
+    border-image: linear-gradient(15deg, #fca311 20%, #ffffff 150%);
+    border-image-slice: 1;
+    border-bottom: 2px double #fca311; 
+    border-top-style: hidden;
+    border-right-style: hidden;
+
+    box-shadow: 15px -8px 60px #fca311;
+    z-index: 0;
 }
 
+.figures-group {
+    display: flex;
+    gap: 15px;         
+    flex-shrink: 0;    
+}
+
+.radio {
+    width: 10%;
+}
+
+.quote{
+    background: linear-gradient(315deg, #ffffff 10%, #14213d 10%);
+    padding: 30px;
+    color: white;
+    margin: 10px 130px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; 
+    box-shadow: 3px 3px 0px #e5e5e5;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.wrapper {
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-wrapper{
+    padding: 3% 0 0 10%;
+}
+
+.first-image{
+    margin-left: auto;
+}
+
+#vertical{
+    flex-direction: column;
+}

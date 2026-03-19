@@ -18,7 +18,66 @@
         </nav>
     </header>
     <main>
-        <p>Lauren</p>
+        <div class="div-auto-size">
+            <h1 class="gradient-subtitle">Pour nous contacter</h1>
+        </div>
+
+        <form action="../../serveur/traitement.php">
+            <fieldset>
+                <legend>Vos coordonnées</legend>
+
+                <label for="nom">Nom complet :</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom">
+
+                <label for="courriel">Adresse courriel :</label>
+                <input type="email" id="courriel" name="courriel" placeholder="Votre adresse courriel">
+            </fieldset>
+
+            <fieldset>
+                <legend>Détails de votre demande</legend>
+
+                <label for="service">Motif principal :</label>
+                <select id="service" name="service" placeholder="Votre nom">
+                    <option value="">Choix de service</option>
+                    <option value="prog">Programmation</option>
+                    <option value="finance">Planification financière</option>
+                    <option value="projet">Gestion de projet</option>
+                </select>
+
+                <h3>Vous êtes :</h3>
+
+
+                <div>
+                    <input class="radio" type="radio" id="prog" name="service" value="programmation">
+                    <label for="prog">Étudiant</label>
+
+                    <input class="radio" type="radio" id="finance" name="service" value="finance">
+                    <label for="finance">Professionnel</label>
+
+                    <input class="radio" type="radio" id="projet" name="service" value="projet" checked>
+                    <label for="projet">Mère de famille</label>
+                </div>
+
+                <br>
+
+                <label for="description">Votre message détaillé :</label>
+                <textarea id="description" name="description" value="description" placeholder="Votre texte ici..."></textarea>
+
+
+            </fieldset>
+            
+            <div class="checkbox-container">
+                <label class="checkbox-label" for="check">Je souhaite m'abonner à l'infolettre.</label>
+                <input type="checkbox" id="info" name="infolettre" value="info">
+            </div>
+
+            <div class="btn-wrapper">
+                <button type="submit">Envoyer la demande</button>
+            </div>
+            
+            
+            
+        </form>
     </main>
     <footer>
     <p>© 2026 — Recrutement Élite.</p>
