@@ -259,23 +259,11 @@ ul {
 
 li{
     margin-bottom: 10px;
-}
-
-h2 {
-    font-family:'Times New Roman', Times, serif;
-    font-size: 70px;
-    font-weight: 700;
-    background: linear-gradient(15deg, #fca311 20%, #ffff 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    padding: 0%;
-    margin: 1% 2%;
-    text-shadow: 0px 0px 60px #ffcc79;
+    color: gold;
 }
 
 p {
-    color: #ffff;
+    color: gold;
     margin: 1% 3% 1% 1%;
     font-size: 25px;
 }
@@ -321,6 +309,22 @@ nav a:hover {
     background-color: #14213d;
 }
 
+i {
+  background: linear-gradient(15deg, #fca311 30%, #ffff 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-right: 10px;
+}
+
+figcaption{
+    color: gold;
+}
+cite{
+    color: gold;
+}
+
+
 .div-auto-size {
     display: flex;
     justify-content: center;
@@ -364,16 +368,15 @@ nav a:hover {
 }
 
 .description {
-    background: #14213d;
+    background: rgb(82, 82, 82);
     padding: 30px;
-    color: white;
     margin: 10px 130px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between; 
-    box-shadow: 3px 3px 0px #e5e5e5;
+    box-shadow: 3px 3px 0px rgb(140, 140, 140);
     border-radius: 15px;
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: Georgia, serif;
 }
 
 .checkbox-label{
@@ -398,12 +401,56 @@ nav a:hover {
 
     box-shadow: 15px -8px 60px #fca311;
     z-index: 0;
+
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: 700;
+    background: linear-gradient(15deg, #fca311 20%, #ffff 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 0%;
+    margin: 50px;
+    text-shadow: 0px 0px 60px #ffcc79;
 }
 
+.section-title h2 {
+    margin: 30px;
+} 
+
+.section-title h1 {
+    margin: 30px;
+    font-size: 30px;
+} 
+
 .figures-group {
-    display: flex;
-    gap: 15px;         
-    flex-shrink: 0;    
+  padding: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.figures-group figure {
+  flex: 1;
+  margin: 0;
+}
+
+.figures-group img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  box-shadow: 0 0 60px 5px #fca311;
+}
+
+.float-right {
+  float: right;
+  width: 180px;   
+  margin-right: 70px;
+}
+
+.float-right img {
+  width: 100%;
+  height: 270px;
+  box-shadow: 0 0 60px 5px #fca311;
 }
 
 .radio {
@@ -411,14 +458,13 @@ nav a:hover {
 }
 
 .quote{
-    background: linear-gradient(315deg, #ffffff 10%, #14213d 10%);
+    background: rgb(82, 82, 82);
     padding: 30px;
-    color: white;
     margin: 10px 130px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between; 
-    box-shadow: 3px 3px 0px #e5e5e5;
+    box-shadow: 3px 3px 0px rgb(140, 140, 140);
     border-radius: 15px;
     margin-top: 30px;
 }
@@ -437,6 +483,114 @@ nav a:hover {
     margin-left: auto;
 }
 
+.fa-copyright {
+  -webkit-text-fill-color: gold;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+
+.horaire {
+  height: 550px;
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+}
+
+.horaire caption {
+    margin: 30px;
+}
+
+.horaire th, .horaire td {
+  border: 2px solid gold;
+  padding: 10px;
+  text-align: center;
+}
+
+/* En-tête */
+.horaire thead {
+  background-color: rgb(82, 82, 82);
+  color: gold;
+}
+
+/* Effet zébré */
+.horaire tbody tr:nth-child(even) {
+  background-color: rgb(140, 140, 140);
+}
+.horaire tbody tr:nth-child(odd) {
+  background-color: rgb(159, 159, 159);
+}
+
+/* Hover */
+.horaire tbody tr:hover {
+  background-color: gold;
+  cursor: pointer;
+}
+
+.horaire tbody tr:hover td {
+  border-color: black;
+}
+
+/* Pied de tableau */
+.horaire tfoot {
+  color: gold;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.horaire tfoot td {
+  border: none;
+}
+
+/* Section galerie */
+.portfolio {
+  padding: 50px 10%;
+  text-align: center;
+}
+
+/* Grid de la galerie */
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 250px); 
+  grid-auto-rows: 250px; 
+  gap: 40px;
+  justify-content: center;
+}
+
+/* Style des figures */
+.grid-gallery figure {
+  background-color: rgb(82, 82, 82);
+  color: gold;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Images */
+.grid-gallery figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Figcaption */
+.grid-gallery figure figcaption {
+  font-size: 1rem;
+  color: gold;
+}
+
+/* Effet au survol */
+.grid-gallery figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
 #vertical{
     flex-direction: column;
 }
+

@@ -5,23 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recrutement Élite</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="../../index.html">Accueil</a></li>
-                <li><a href="loisirs.html">Horaires & Loisirs</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../../index.html"><i class="fa-solid fa-house"></i>Accueil</a></li>
+                <li><a href="loisirs.html"><i class="fa-solid fa-calendar-days"></i>Horaires & Loisirs</a></li>
+                <li><a href="portfolio.html"><i class="fa-solid fa-book-bookmark"></i>Portfolio</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-address-book"></i>Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <p>Timoter</p>
+        <table class="horaire">
+            <caption class="gradient-subtitle">Notre horaire</caption>
+            <thead>
+                <tr>
+                    <th>Heure</th>
+                    <th>Lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>9h - 11h</td>
+                <td rowspan="2">Programmation</td>
+                <td>Lecture</td>
+                <td colspan="2">Sport intensif</td>
+            </tr>
+            <tr>
+                <td>11h - 13h</td>
+                <td>Échecs</td>
+                <td>Musique</td>
+                <td>Repos</td>
+            </tr>
+            <tr>
+                <td>13h - 15h</td>
+                <td colspan="2">Projet personnel</td> 
+                <td rowspan="2">Jeux vidéo</td> 
+                <td>Lecture</td>
+            </tr>
+            <tr>
+                <td>15h - 17h</td>
+                <td>Sport</td>
+                <td>Film</td>
+                <td>Programmation</td>
+            </tr>
+            <tr>
+                <td>17h - 19h</td>
+                <td colspan="4">Temps libre</td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">Sujet à modification, valide jusqu'au 30 février 2027</td>
+                </tr>
+            </tfoot>
+        </table>
     </main>
     <footer>
-    <p>© 2026 — Recrutement Élite.</p>
+        <p><i class="fa-solid fa-copyright" id="icone-footer"></i>2026 — Recrutement Élite.</p>
     </footer>
 </body>
 </html>
